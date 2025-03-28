@@ -92,7 +92,7 @@ const Navbar = () => {
                   <div className="flex gap-2 space-y-2">
                     <Avatar className="cursor-pointer">
                       <AvatarImage
-                        src={user?.profile?.profilePhoto || defaultProfilePhoto}
+                        // src={user?.profile?.profilePhoto || defaultProfilePhoto}
                         alt={user?.fullname || "User"}
                       />
                     </Avatar>

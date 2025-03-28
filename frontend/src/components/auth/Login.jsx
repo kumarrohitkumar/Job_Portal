@@ -51,7 +51,7 @@ const Login = () => {
         if(user){
             navigate("/");
         }
-    },[])
+    },[])  //This automatically redirects authenticated users to the home page, preventing them from accessing pages like login or sign-up, which they no longer need.
     return (
         <div>
         {/* console.log("we are login") */}
