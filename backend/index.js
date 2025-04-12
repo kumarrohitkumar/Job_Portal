@@ -20,7 +20,7 @@ app.use(cookieParser());
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
-      ? "https://job-portal-26m0.onrender.com" // Production API
+      ? "https://job-portal-ckeu.onrender.com" // Production API
       : "http://localhost:5173", // Local Frontend
   credentials: true,
 };
