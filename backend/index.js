@@ -18,10 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // Dynamically Set CORS Based on Environment
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://job-portal-2-c30j.onrender.com"
-      : "http://localhost:5173", // Local Frontend
+  origin: "http://localhost:5173", // Local Frontend
   credentials: true,
 };
 app.use(cors(corsOptions));
