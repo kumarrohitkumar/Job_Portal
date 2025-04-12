@@ -1,5 +1,5 @@
 // You need to define the mode correctly, for example, from environment variables
-const mode =  "production"; // Defaulting to development
+const mode =  ""; // Defaulting to development
 
 let USER_API_END_POINT,
   JOB_API_END_POINT,
