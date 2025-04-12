@@ -6,7 +6,6 @@ import { setSearchedQuery } from '@/redux/jobSlice';
 import useGetAllJobs from '@/hooks/useGetAllJobs';
 
 // const randomJobs = [1, 2,45];
-
 const Browse = () => {
     useGetAllJobs();
     const {allJobs} = useSelector(store=>store.job);
