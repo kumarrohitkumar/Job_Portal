@@ -7,9 +7,11 @@
     "dev": "concurrently -n api,web -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
     "test": "npm --prefix backend test && npm --prefix frontend test",
     "lint": "npm --prefix backend run lint && npm --prefix frontend run lint",
-    "seed": "npm --prefix backend run seed"
+    "seed": "npm --prefix backend run seed",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "concurrently": "^9.2.1"
   }
 }
