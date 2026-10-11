@@ -1,17 +1,23 @@
 # JobConnect
 
-A job portal for India: job seekers search and apply in one click, recruiters post jobs and shortlist applicants.
+> A job portal for India: job seekers search and apply in one click, recruiters post jobs and shortlist applicants.
 
-**Live:** https://jobconnect-portal-alpha.vercel.app
+**[Live demo](https://jobconnect-portal-alpha.vercel.app)** · Job seeker `student@jobconnect.dev` / `Demo@1234` · Recruiter `recruiter@jobconnect.dev` / `Demo@1234`
 
-| Demo account | Email | Password |
-|---|---|---|
-| Job seeker | `student@jobconnect.dev` | `Demo@1234` |
-| Recruiter | `recruiter@jobconnect.dev` | `Demo@1234` |
+**Stack:** React · Vite · Tailwind CSS · React Query · Express 5 · MongoDB · AWS S3 · Vercel
 
-Or create your own account; choose "Job seeker" or "Recruiter" when you sign up.
+## At a glance
+
+- **Secured an insecure app:** rebuilt the API with role and ownership checks on every route. Before, any job seeker could post jobs and read applicants, and password hashes leaked in API responses.
+- **Safe uploads:** resumes and images are checked by their bytes (PDF, JPG/PNG/WebP, 2 MB cap) and stored in a private S3 bucket behind links that expire.
+- **Sessions that can't go stale:** the signed-in user always comes from the server, replacing a cached client store that kept expired logins looking signed in; route-level code splitting halved the main bundle (620 KB to 330 KB).
+- **Tested end to end:** 52 automated tests (33 API, 10 UI, 9 Playwright journeys from sign-up to shortlist), run against the live site.
 
 ![Home page](docs/screenshots/home.png)
+
+---
+
+You can also create your own account; choose "Job seeker" or "Recruiter" when you sign up.
 
 ## What it does
 
