@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "regions": ["bom1"],
+  "buildCommand": "mkdir -p public && echo 'JobConnect API. Try /api/health' > public/index.txt",
+  "outputDirectory": "public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
+  "functions": { "api/index.js": { "maxDuration": 30 } }
+}
