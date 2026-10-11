@@ -63,6 +63,14 @@ describe('auth', () => {
     expect((await request(app).get('/api/v1/auth/me').set('Cookie', 'token=garbage')).status).toBe(401);
   });
 
+  it('answers /session with the user, or null for a guest, without an error status', async () => {
+    const guest = await request(app).get('/api/v1/auth/session');
+    expect(guest.status).toBe(200);
+    expect(guest.body.user).toBeNull();
+    const { cookie, user } = await signUp(app);
+    expect((await request(app).get('/api/v1/auth/session').set('Cookie', cookie)).body.user.id).toBe(user.id);
+  });
+
   it('logs out by clearing the cookie', async () => {
     const { cookie } = await signUp(app);
     const res = await request(app).post('/api/v1/auth/logout').set('Cookie', cookie);

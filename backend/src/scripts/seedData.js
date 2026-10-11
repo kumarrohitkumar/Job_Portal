@@ -34,6 +34,8 @@ const JOBS = [
   ['Indus Logistics', 'Operations Analyst', 'Part-time', 6, 1, 2, ['Excel', 'SQL', 'Communication'], 'Track delivery performance and help partners fix delays, about 20 hours a week.'],
 ];
 
+const ORDER = [0, 3, 6, 9, 10, 1, 4, 7, 11, 2, 5, 8];
+
 /** Creates the demo accounts, companies and jobs. Only touches records it owns (by demo email). */
 export async function seedDemoData() {
   const password = await bcrypt.hash(DEMO_PASSWORD, 10);
@@ -66,7 +68,8 @@ export async function seedDemoData() {
       location: byName.get(company).location,
       company: byName.get(company)._id,
       createdBy: recruiter._id,
-      createdAt: new Date(now - i * 6 * 60 * 60 * 1000),
+      // Interleave companies so the newest jobs aren't all from one employer.
+      createdAt: new Date(now - ORDER.indexOf(i) * 5 * 60 * 60 * 1000),
     })),
   );
   if (jobs.length >= 4) {

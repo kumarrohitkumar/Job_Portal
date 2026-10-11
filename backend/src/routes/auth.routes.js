@@ -62,6 +62,11 @@ export function authRoutes({ jwtSecret, secureCookies, serialize }) {
     res.json({ success: true, message: 'Signed out' });
   });
 
+  // For the browser on page load: a guest is a normal answer (user: null), not an error.
+  router.get('/session', authenticate(jwtSecret, { required: false }), async (req, res) => {
+    res.json({ success: true, user: req.user ? await serialize.user(req.user) : null });
+  });
+
   router.get('/me', authenticate(jwtSecret), async (req, res) => {
     res.json({ success: true, user: await serialize.user(req.user) });
   });
