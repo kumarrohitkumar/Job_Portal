@@ -121,3 +121,13 @@ Two Vercel projects from this repo:
 - `frontend/` (web): `frontend/vercel.json` rewrites `/api/*` to the API project, so the browser talks to one origin and the session cookie stays first-party. Change that URL if your API project has another name.
 
 MongoDB Atlas needs to allow connections from Vercel (`0.0.0.0/0` on the free tier). The database user only needs `readWrite` on the app's database.
+
+---
+
+## All my live projects
+
+| Project | What it is | Live | Code | Demo login |
+|---|---|---|---|---|
+| **Kosh LMS** | Loan management: borrower applies (eligibility rules, salary slip, simple interest), teams sanction, disburse and collect | [kosh-lms.vercel.app](https://kosh-lms.vercel.app) · [API docs](https://kosh-lms.vercel.app/api/docs) | [lms-assignment](https://github.com/kumarrohitkumar/lms-assignment) | `admin@lms.dev` / `Password@123` |
+| **JobConnect** | Job portal: seekers search and apply in one click, recruiters post jobs and shortlist | [jobconnect-portal-alpha.vercel.app](https://jobconnect-portal-alpha.vercel.app) | [Job_Portal](https://github.com/kumarrohitkumar/Job_Portal) | `student@jobconnect.dev` / `Demo@1234` |
+| **Chatify** | Real-time direct and group chat with typing, read receipts and photos | [chatify-13-205-125-184.sslip.io](https://chatify-13-205-125-184.sslip.io) | [chat_app](https://github.com/kumarrohitkumar/chat_app) | `ananya@demo.chat` / `demo1234` |
